@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>atividade</title>
+</head>
+<body>
+
+  <h1>Seu nome estará aqui em baixo:</h1>
+  <p id="mensagem"></p>
+
+  <script>
+    
+        let nome = prompt('Digite seu nome: ');
+
+    
+    function esperar() {
+            return new Promise((resolve) => {
+            setTimeout(() => resolve("Perfeito, seu nome é " + nome), 5000);
+      });
+    }
+
+        async function mostrarNome() {
+            document.getElementById("mensagem").textContent = "Aguarde 5 segundos...";
+            const resul = await esperar(); 
+            document.getElementById("mensagem").textContent = resul;
+    }
+
+    mostrarNome();
+  </script>
+
+</body>
+</html>
